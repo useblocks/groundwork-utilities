@@ -18,12 +18,12 @@ setup(
     license='MIT license',
     author='team useblocks',
     author_email='info@useblocks.com',
-    description="Package for hosting groundwork apps and plugins like groundwork_utilities_app or groundwork_utilities_plugin.",
+    description="Provides groundwork plugins to measure application or system resources like used memory.",
     long_description=__doc__,
     packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
     include_package_data=True,
     platforms='any',
-    setup_requires=['pytest-runner', 'sphinx', 'gitpython'],
+    setup_requires=['groundwork', 'groundwork-web', 'psutil'],
     tests_require=['pytest', 'pytest-flake8'],
     install_requires=[],
     classifiers=[
@@ -38,10 +38,11 @@ setup(
         'Programming Language :: Python :: 3.5',
     ],
     entry_points={
-        'console_scripts': ["groundwork_utilities = "
-                            "groundwork_utilities.applications.groundwork_utilities_app:start_app"],
-        'groundwork.plugin': ["groundwork_utilities_plugin = "
-                              "groundwork_utilities.plugins.groundwork_utilities_plugin:"
-                              "groundwork_utilities_plugin"],
+        'groundwork.plugin': ["gw_resource_monitor = "
+                              "groundwork_utilities.plugins.GwResourceMonitor.gw_resource_monitor:GwResourceMonitor",
+                              "gw_resource_monitor_Web = "
+                              "groundwork_utilities.plugins.GwResourceMonitorWeb.gw_resource_monitor_web"
+                              ":GwResourceMonitorWeb",
+                              ],
     }
 )
