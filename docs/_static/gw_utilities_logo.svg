@@ -16,7 +16,7 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="gw_utilities_logo.svg"
-   inkscape:export-filename="/home/daniel/workspace/groundwork/groundwork-web/docs/_static/gw_logo.png"
+   inkscape:export-filename="/home/daniel/workspace/groundwork/groundwork-demo/groundwork_demo/plugins/gw_demo_introduction/static/img/gw_utilities.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
   <defs
@@ -554,7 +554,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.71999675"
-     inkscape:cx="261.45216"
+     inkscape:cx="-145.49413"
      inkscape:cy="5.7905991"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
