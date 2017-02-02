@@ -23,7 +23,7 @@ setup(
     packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
     include_package_data=True,
     platforms='any',
-    install_requires=['groundwork', 'groundwork-web', 'psutil', 'groundwork-database'],
+    install_requires=['groundwork-web', 'psutil', 'groundwork-database', 'groundwork'],
     tests_require=['pytest', 'pytest-flake8'],
     classifiers=[
         'Development Status :: 3 - Alpha',
