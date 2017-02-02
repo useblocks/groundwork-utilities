@@ -78,7 +78,7 @@ class DbValidator:
         self.db_class = db_class
         self.tablename = db_class.__tablename__
         self.hash_id = ".".join([self.name, self.tablename])
-        self.attributes = inspect(self.db_class).columns.keys()
+        self.attributes = inspect(self.db_class).columns.keys()  # Only columns/attributes, which were defined by user
         self.plugin = plugin
 
         self.validator = plugin.validators.register(self.hash_id, description, attributes=self.attributes)
@@ -92,7 +92,7 @@ class DbValidator:
         event.listen(self.db_class, "after_insert", self._store_hash)
 
     def _check_hash(self, target, context, attrs):
-        hash_id = ".".join([self.hash_id, str(target.id)])
+        hash_id = self._calculate_hash_id(target)
         hash_row = self.db.query(self.hash_model).filter_by(hash_id=hash_id).first()
         hash_current = hash_row.hash
 
@@ -102,7 +102,7 @@ class DbValidator:
 
     def _store_hash(self, mapper, connection, target):
         new_hash = self.validator.hash(target)
-        hash_id = ".".join([self.hash_id, str(target.id)])
+        hash_id = self._calculate_hash_id(target)
         current_hash_row = self.db.query(self.hash_model).filter_by(hash_id=hash_id).first()
         if current_hash_row is None:
             current_hash_row = self.hash_model(hash_id=hash_id, hash=new_hash)
@@ -111,6 +111,11 @@ class DbValidator:
 
         self.db.add(current_hash_row)
         self.db.commit()
+
+    def _calculate_hash_id(self, target):
+        # We need a unique id, which identifies our hash value inside the database.
+        # But the ID must not be related to the content of the db model itself, as this will change.
+        return ".".join([self.hash_id, str(target.id)])
 
 
 class ValidationError(BaseException):

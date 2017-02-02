@@ -1,0 +1,7 @@
+Patterns
+========
+
+.. toctree::
+
+   gwdbvalidatorspattern
+   gwvalidatorspattern

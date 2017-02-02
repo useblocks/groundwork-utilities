@@ -40,10 +40,15 @@ def test_db_validator_init():
             self.db.commit()
             self.db.query(self.Test).all()
 
+            # Execute sql-statement, which does not trigger the sqlalchemy events. So no hash gets updated.
             self.db.engine.execute("UPDATE test SET name='not_working' WHERE id=1")
+
+            # Add another entry, so the query are executed on database and not on session
+            # ( self.db.session.remove() does not do the trick, y?? )
             my_test_2 = self.Test(name="blub")
             self.db.add(my_test_2)
             self.db.commit()
+
             with pytest.raises(ValidationError):
                 self.db.query(self.Test).filter_by(id=1).first()
 
