@@ -12,13 +12,13 @@ with open('groundwork_utilities/version.py', 'rb') as f:
         f.read().decode('utf-8')).group(1)))
 
 setup(
-    name='groundwork utilities',
+    name='groundwork-utilities',
     version=version,
-    url='http://groundwork utilities.readthedocs.org',
+    url='http://groundwork-utilities.readthedocs.org',
     license='MIT license',
     author='team useblocks',
     author_email='info@useblocks.com',
-    description="Provides groundwork plugins to measure application or system resources like used memory.",
+    description="Provides groundwork plugins to monitor and validate applications during runtime.",
     long_description=__doc__,
     packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
     include_package_data=True,
@@ -44,6 +44,9 @@ setup(
                               "gw_resource_monitor_Web = "
                               "groundwork_utilities.plugins.GwResourceMonitorWeb.gw_resource_monitor_web"
                               ":GwResourceMonitorWeb",
+                              "gw_db_validator = "
+                              "groundwork_utilities.plugins.GwDbValidator.gw_db_validator"
+                              ":GwDbValidator",
                               ],
     }
 )

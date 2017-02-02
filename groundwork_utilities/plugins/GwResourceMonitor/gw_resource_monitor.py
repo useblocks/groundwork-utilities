@@ -4,9 +4,9 @@ from groundwork_utilities.resources import get_resources
 
 
 class GwResourceMonitor(GwCommandsPattern):
-    def __init__(self, *args, **kwargs):
+    def __init__(self, app, **kwargs):
         self.name = kwargs.get("name", self.__class__.__name__)
-        super(GwResourceMonitor, self).__init__(*args, **kwargs)
+        super(GwResourceMonitor, self).__init__(app, **kwargs)
 
     def activate(self):
         self.commands.register("resources", "Prints used resources", self._print_resources,

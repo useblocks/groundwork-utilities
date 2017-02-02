@@ -73,5 +73,3 @@ def test_validation():
     test_plugin.db.add(test_entry_1)
     test_plugin.db.commit()
     test_plugin.db.session.refresh(test_entry_1)
-
-

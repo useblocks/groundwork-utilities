@@ -1,5 +1,5 @@
 import pytest
-from sqlalchemy import  Column, String, Integer
+from sqlalchemy import Column, String, Integer
 
 import groundwork
 from groundwork_utilities.patterns import GwDbValidatorsPattern

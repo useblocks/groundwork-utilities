@@ -54,7 +54,7 @@ class DbValidatorsApplication:
                                                 description=description,
                                                 db_class=db_class,
                                                 db=self.db,
-                                                hash_model= self.Hashes,
+                                                hash_model=self.Hashes,
                                                 plugin=plugin)
 
         return self._db_validators[name]
@@ -70,7 +70,7 @@ class DbValidatorsApplication:
 
 
 class DbValidator:
-    def __init__(self, name, description, db_class, db, hash_model,  plugin=None):
+    def __init__(self, name, description, db_class, db, hash_model, plugin=None):
         self.name = name
         self.description = description
         self.db = db

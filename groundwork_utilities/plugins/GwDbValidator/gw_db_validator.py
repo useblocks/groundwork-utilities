@@ -31,7 +31,3 @@ class GwDbValidator(GwDbValidatorsPattern):
         self.validators.db.register(name="%s_db_validator" % db_class.name,
                                     description="Database validator for %s" % db_class.name,
                                     db_class=db_class)
-
-
-
-
