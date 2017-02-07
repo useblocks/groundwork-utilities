@@ -34,19 +34,13 @@ Welcome to groundwork utilities
 This Python package is designed for applications, which are based on the
 `groundwork application framework <https://groundwork.readthedocs.io>`_.
 
-Most of its plugins and patterns are focused on application monitoring and validation.
+Most of its plugins and patterns are focused on application monitoring.
 
 This package contains the following groundwork extensions:
 
  * Plugins
 
-  * **GwDbValidator** - Validates automatically each database model request
   * **GwResourceMonitor** - Prints used hardware resources on command line
-
- * Patterns
-
-   * **GwValidatorsPattern** - Provides functions to hash and valid python objects.
-   * **GwDbValidatorsPattern** - Allows the registration of specific database model classes, so that their requests get validated.
 
 Installation
 ------------

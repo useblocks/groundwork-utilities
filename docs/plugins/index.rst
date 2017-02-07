@@ -2,5 +2,3 @@ Plugins
 =======
 
 .. toctree::
-
-   gwdbvalidator

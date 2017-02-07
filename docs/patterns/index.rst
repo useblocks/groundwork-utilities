@@ -3,5 +3,3 @@ Patterns
 
 .. toctree::
 
-   gwdbvalidatorspattern
-   gwvalidatorspattern
